@@ -11,6 +11,7 @@ import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
 
 import com.khorn.terraincontrol.LocalWorld;
+import com.khorn.terraincontrol.bukkit.BukkitWorld;
 import com.khorn.terraincontrol.configuration.ConfigFunction;
 import com.khorn.terraincontrol.customobjects.bo3.BO3Config;
 import com.khorn.terraincontrol.customobjects.bo3.BO3Loader;
@@ -127,7 +128,7 @@ public class EntityFunction extends BO3PlaceableFunction
     	if(entitytype == EntityType.PLAYER)
     		return;
     	
-    	World globalWorld = BO3ToolsEntities.plugin.getServer().getWorld(world.getName());
+    	World globalWorld = ((BukkitWorld)world).getWorld().getWorld();
     	
     	Entity entity = null;
     	
